@@ -9,7 +9,15 @@ const Favorites = () => {
     return repoData.filter((repo) => (favorites[repo.id] ? true : false));
   }, [favorites]);
 
-  return <RepoList data={favoriteRepos} />;
+  return (
+    <>
+      {favoriteRepos.length ? (
+        <RepoList data={favoriteRepos} />
+      ) : (
+        "No favorites yet"
+      )}
+    </>
+  );
 };
 
 export default Favorites;
