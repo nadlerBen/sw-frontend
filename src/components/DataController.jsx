@@ -2,6 +2,11 @@ import React, { useState, useEffect, useCallback } from "react";
 import { API_URI } from "../constants/constants";
 import { DataContext } from "../context/context";
 import { Button } from "antd";
+import styled from "styled-components";
+
+const StyledButton = styled(Button)`
+  margin: 10px;
+`;
 
 const DataController = ({ children }) => {
   const [repoData, setRepoData] = useState([]);
@@ -51,11 +56,15 @@ const DataController = ({ children }) => {
     <DataContext.Provider
       value={{ repoData, removeRepo, manageFavorite, favorites }}
     >
-      <Button onClick={() => fetchRepos(true)}>Sort by stars</Button>
-      <Button onClick={() => fetchRepos(false, true, false)}>
+      <StyledButton onClick={() => fetchRepos(true)}>
+        Sort by stars
+      </StyledButton>
+      <StyledButton onClick={() => fetchRepos(false, true, false)}>
         Sort by issues
-      </Button>
-      <Button onClick={() => fetchRepos(false, false, true)}>Sort A-Z</Button>
+      </StyledButton>
+      <StyledButton onClick={() => fetchRepos(false, false, true)}>
+        Sort A-Z
+      </StyledButton>
       {children}
     </DataContext.Provider>
   );

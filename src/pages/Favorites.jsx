@@ -7,7 +7,7 @@ const Favorites = () => {
 
   const favoriteRepos = useMemo(() => {
     return repoData.filter((repo) => (favorites[repo.id] ? true : false));
-  }, [favorites]);
+  }, [repoData, favorites]);
 
   return (
     <>
