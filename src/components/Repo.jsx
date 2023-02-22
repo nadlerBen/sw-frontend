@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import { API_URI } from "../constants/constants";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
-import { StarOutlined, StarFilled } from "antd-icons";
 import { DataContext } from "../context/context";
 
 const RepoContainer = styled.div`

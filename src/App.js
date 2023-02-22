@@ -16,9 +16,6 @@ export default function App() {
           </Routes>
         </DataController>
       </Skeleton>
-      {/* <DataController>
-        <RepoList />
-      </DataController> */}
     </Router>
   );
 }

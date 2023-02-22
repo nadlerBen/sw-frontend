@@ -6,8 +6,6 @@ const DataController = ({ children }) => {
   const [repoData, setRepoData] = useState([]);
   const [favorites, setFavorites] = useState({});
 
-  console.log(favorites);
-
   const fetchRepos = useCallback(async () => {
     const result = await fetch(API_URI, {
       method: "GET",
