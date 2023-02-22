@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useMemo } from "react";
 import Repo from "./Repo";
 
 const RepoList = ({ data }) => {
-  return data.map((repo) => <Repo key={repo.id} data={repo} />);
+  const repos = useMemo(() => {
+    return data.map((repo) => <Repo key={repo.id} data={repo} />);
+  }, [data]);
+  return repos;
 };
 
 export default RepoList;

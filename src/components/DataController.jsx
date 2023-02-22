@@ -7,6 +7,7 @@ const DataController = ({ children }) => {
   const [repoData, setRepoData] = useState([]);
   const [favorites, setFavorites] = useState({});
 
+  // fetches data with an option for sorting on specific criteria
   const fetchRepos = useCallback(
     async (sortByStars = false, sortByIssues = false, sortAtoZ = false) => {
       const url = new URL(API_URI);

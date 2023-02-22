@@ -1,6 +1,9 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import { DataContext } from "../context/context";
+import { Button, Checkbox } from "antd";
+import { DeleteFilled } from "@ant-design/icons";
+import { timeSince } from "../utils/utils";
 
 const RepoContainer = styled.div`
   display: flex;
@@ -40,6 +43,10 @@ const BottomRepoData = styled.p`
   padding-inline-end: 10px;
 `;
 
+const StyledCheckbox = styled(Checkbox)`
+  padding-inline-end: 10px;
+`;
+
 // TODO - format "submitted X ago" date to wanted format
 const Repo = ({ data }) => {
   const { manageFavorite, removeRepo, favorites } = useContext(DataContext);
@@ -71,16 +78,16 @@ const Repo = ({ data }) => {
           <BottomRepoData>Stars: {stars}</BottomRepoData>
           <BottomRepoData>Issues: {issues}</BottomRepoData>
           <BottomRepoData>
-            Submitted {lastCommitTime} ago by {lastCommitterName}
+            Submitted {timeSince(lastCommitTime)} ago by {lastCommitterName}
           </BottomRepoData>
         </BottomRepoDetails>
       </RepoData>
-      <input
+      <StyledCheckbox
         type="checkbox"
         checked={isToggled}
         onChange={handleFavoriteToggle}
       />
-      <button onClick={() => removeRepo(id)}>Delete</button>
+      <Button onClick={() => removeRepo(id)} icon={<DeleteFilled />} />
     </RepoContainer>
   );
 };

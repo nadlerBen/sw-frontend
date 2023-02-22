@@ -23,7 +23,6 @@ const AppLayout = ({ children }) => {
       <Content
         style={{
           padding: "0 50px",
-          height: "100vh",
         }}
       >
         <div>{children}</div>
