@@ -1,7 +1,5 @@
 # StarkWare Frontend Home Assignment
 
-Please find the app uploaded on Netlify in the following link: [Netlify - SW Ben's assignment](https://starkw-frontend.netlify.app/)
-
 The app is using the following mockAPI endpoint:
 `https://63f5f8feab76703b15b5860c.mockapi.io/api/v1/repos/Repos`
 
